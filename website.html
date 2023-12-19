@@ -8,51 +8,61 @@
 </head>
 <body>
   
-<header class="header-bar">
-  <h1 class="header-text">LOGO</h1> <!-- ??? TUTAJ LOGO -->
-  <span class="header-text">Strona główna</span> <!-- ??? TUTAJ PRZYCISK -->
-  <span class="header-text">Nasz zespół</span> <!-- ??? TUTAJ PRZYCISK -->
-  <span class="header-text">Opony</span> <!-- ??? TUTAJ PRZYCISK -->
-  <img src="koszyczek.jpg" alt="koszyczek" > <!-- style="width:40px;height:40px;float:right;"-->
-</header>
+  <!-- Navigation Bar -->
+  <nav>
+    <!-- Logo Image -->
+    <img src="logo.png" alt="Logo" class="logo">
 
-<div class="image-container">  <!-- Należy sprawdzić czy zdjęcie się dobrze dopasuje na różnych rozmiarach ekranów (czy tylko u mnie) -->
-  <img src="magazyn.jpg" alt="Obraz 1" style="width:100%;height:100%;"> <!-- ŚCIEŻKA BĘDZIE ZMIENIONA-->
-  <h1 class="image-header">Sprzedaż opon</h1> <!-- Dopracować czcionkę i tekst -->
-  <p class="image-description">Pomożemy ci wybrać opony oraz dostarczymy je pod twój dom w ciągu 48h</p> <!-- Dopracować czcionkę i zawartość tekstu-->
-</div>
+    <!-- sections -->
+    <div class="sections">
+      <span class="section">Strona Główna</span>
+      <span class="section">Nasz zespół</span>
+      <span class="section">Opony</span>
+    </div>
+
+    <!-- "Add to Cart" button -->
+    <button class="cart">
+      <img src="cart.png" alt="Cart" class="cart-image">
+    </button>
+  </nav>
+
+  <div class="image-container">  <!-- Należy sprawdzić czy zdjęcie się dobrze dopasuje na różnych rozmiarach ekranów (czy tylko u mnie) -->
+    <img src="magazyn.jpg" alt="Obraz 1" style="width:100%;height:100%;"> <!-- ŚCIEŻKA BĘDZIE ZMIENIONA-->
+    <h1 class="image-header">Sprzedaż opon</h1> <!-- Dopracować czcionkę i tekst -->
+    <p class="image-description">Pomożemy ci wybrać opony oraz dostarczymy je pod twój dom w ciągu 48h</p> <!-- Dopracować czcionkę i zawartość tekstu-->
+  </div>
 
 <!--------------------------------------------->
 
-<div class="autorzy-container">
-  <div class="autorzy-img-i-text-container">
-    <img src="bois.jpg" alt="Opis zdjęcia">
-  </div>
-  <div class="autorzy-text-container">
-    <h1>Zespół LOGO</h1> <!-- wstawić tu nazwę firmy z logo jak już będzie -->
-    <p>założyciele zespołu</p>
-    <opis>Jesteśmy bla bla bla bla bla bla bla</opis>
-  </div>
-</div>
-
-<!--------------------------------------------->
-
-<div class="flex-cont">
-  <div class="image-cont">
-    <img src="kotek1.jpg" alt="Opis obrazu 1">
-    <p>Tekst pod obrazem 1</p>
+  <div class="autorzy-container">
+    <div class="autorzy-img-i-text-container">
+      <img src="bois.jpg" alt="Opis zdjęcia">
+    </div>
+    <div class="autorzy-text-container">
+      <h1>Zespół LOGO</h1> <!-- wstawić tu nazwę firmy z logo jak już będzie -->
+      <p>założyciele zespołu</p>
+      <opis>Jesteśmy bla bla bla bla bla bla bla</opis>
+    </div>
   </div>
 
-  <div class="image-cont">
-    <img src="kotek2.png" alt="Opis obrazu 2">
-    <p>Tekst pod obrazem 2</p>
-  </div>
+  <!--------------------------------------------->
 
-  <div class="image-cont">
-    <img src="kotek3.jpg" alt="Opis obrazu 3">
-    <p>Tekst pod obrazem 3</p>
+  <div class="flex-cont">
+    <div class="image-cont">
+      <img src="kotek1.jpg" alt="Opis obrazu 1">
+      <p>Tekst pod obrazem 1</p>
+    </div>
+
+    <div class="image-cont">
+      <img src="kotek2.png" alt="Opis obrazu 2">
+      <p>Tekst pod obrazem 2</p>
+    </div>
+
+    <div class="image-cont">
+      <img src="kotek3.jpg" alt="Opis obrazu 3">
+      <p>Tekst pod obrazem 3</p>
+    </div>
   </div>
-</div>
 
 
 <!--------------------------------------------->
@@ -63,4 +73,20 @@
     </section>
     <section class="table_content" id="tablediv"></section>
  </div>
+
+ <script>
+  let prevScrollPos = window.pageYOffset;
+
+  window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos < currentScrollPos && currentScrollPos > 100) {
+      document.body.classList.add('scrolling-down');
+    } else {
+      document.body.classList.remove('scrolling-down');
+    }
+
+    prevScrollPos = currentScrollPos;
+  }
+  </script>
 </body>
