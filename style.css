@@ -8,6 +8,10 @@
     font-family: "Poppins", sans-serif;
 }
   
+body{
+    justify-content: center;
+    align-items: center;
+}
   /* ------------------------- NAGŁÓWEK który jest paskiem -----------------------------------------------*/
   /* nagłówek jest paskiem w którym wyświetlają się elementy */
   
@@ -177,6 +181,7 @@ tbody tr:hover{
 }
 
 .table{
+
     width: 80vw;
     height: 90vh;
 
