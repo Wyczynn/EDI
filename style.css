@@ -51,6 +51,9 @@ nav {
 }
 
 .sections {
+  margin-left: 20px;
+  margin-right: 116px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,12 +271,13 @@ tbody tr:hover{
       font-size: 12px;
     }
 
-    .logo {
-      height: 40px;
+    .sections {
+      margin-left: 20px;
+      margin-right: 80px;
     }
 
-    .cart{
-      padding: 5px 10px;
+    .logo {
+      height: 40px;
     }
 
     .cart-image {
