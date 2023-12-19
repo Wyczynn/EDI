@@ -1,1 +1,139 @@
-ddddd
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ------------------------- NAGŁÓWEK który jest paskiem -----------------------------------------------*/
+  /* nagłówek jest paskiem w którym wyświetlają się elementy */
+  
+  .header-bar {
+    background-color: #3498db; /* Kolor tła paska */
+    color: #fff; /* Kolor tekstu */
+    /* text-align: center; */
+    padding: 10px; /* Wewnętrzny odstęp paska */
+  }
+
+  /* ta klasa dziedziczy z header-bar ale działa tylko dla elementów h1*/
+  .header-bar h1 { /* LOGO */
+    margin: 0;
+  }
+
+  .header-bar img { /* kosyczek z prawej strony*/
+    width:40px;
+    height:40px;
+    float:right; /* przyklejony do prawej strony */
+  }
+
+  .header-text {
+    display: inline-block; /* tekst/przyciski wyświetlają się obok siebie a nie pod sobą*/
+    margin-left:100px; /* odstęp między nimi */
+  }
+
+  .header-text:hover{ /* podświetlanie gdy się najedzie */
+    background-color: #111;
+  }
+
+  
+  /* ------------------------- Zdjęcie na którym są napisy ------------------------------------------------------------*/
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    
+    margin: 0 auto; /* Centralizacja kontenera */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto; /* Automatyczne skalowanie wysokości, aby zachować proporcje */
+    display: block; /* Usunięcie odstępów na górze i dołu */
+    margin: 0 auto; /* Centralizacja obrazu wewnątrz kontenera */
+    filter: brightness(60%); /* Przyciemnienie zdjęcia (tak aby tekst był bardziej widoczny */
+  }
+  
+  .image-header, .image-description { /* przekształcić to w jedną klasę muszę */
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .image-header {
+    top: 20%; /* 20% odnosi się do rozmiaru image-cointainer*/
+    font-size: 3em;
+  }
+  
+  .image-description {
+    top: 50%; /* 80% odnosi się do rozmiaru image-cointainer*/
+    font-size: 1.5em;
+  }
+
+  /* --------------------------- SEKCJA z autorami strony ---------------------------------------------------------------------*/
+  .autorzy-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px auto; /* Centralizacja kontenera i dodatkowy margines */
+    padding: 20px;
+  }
+  
+  .autorzy-img-i-text-container{
+    width: 100%;
+    height: 100%;
+    flex: 1; /* 1 1 auto (większy odstęp)*/
+    margin-right: 20px; /* Odstęp między obrazem a tekstem */
+    float:left;
+    
+  }
+  
+  .autorzy-img-i-text-container img {
+    width: 500px;
+    height: 500px;
+    flex: 1;
+    margin-right: 20px;
+  } 
+  
+  .autorzy-text-container {
+    flex: 1; /* Kontener tekstu zajmuje większą elastyczną przestrzeń */
+    text-align: center;
+  }
+  
+  .autorzy-text-container p,h1,t {
+    margin: 0 0 10px; /* Dodatkowy margines na dole każdego nagłówka */
+  }
+
+  .autorzy-text-container p {
+    color: grey
+  }
+  
+  opis{
+    font-family: 'Courier New', Courier, monospace;
+    
+  }
+
+  /* ------------------------------------------ Trzy zdjęcia --------------------------------------------------------------- */
+  .flex-cont {
+    display: flex;
+    justify-content: center; /* drugie zdjęcie stanowi środek, a sam box wyświetla się na środku*/
+  }
+
+  .image-cont {
+    text-align: center;
+    margin: 10px;
+    
+  }
+
+  .image-cont img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; /* Utrzymuje proporcje obrazu i wypełnia kontener */
+    border: 1px solid #ddd; /* Dodatkowy styl obramowania */
+    border-radius: 8px; /* Zakrąglenie narożników */
+    margin: 20px;
+  }
+
+  .image-cont p {
+    margin: 8px 0;
+  }
