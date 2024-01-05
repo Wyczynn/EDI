@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>OPONY OPONY DARMOWE OPONY</title>
 </head>
 <body>
@@ -87,6 +88,23 @@
     <section class="table_content" id="tablediv"></section>
  </div>
 
+
+
+<!------------------"Charts"-------------------->
+
+<div id="charts">
+  <div id="chart-canvas">
+    <canvas id="myBarChart1" width="400" height="200"></canvas>
+  </div>
+
+  <div id="chart-canvas">
+    <canvas id="myBarChart2" width="400" height="200"></canvas>
+  </div>
+</div>
+
+
+<!---------------------------------------------->
+
  <script>
   let prevScrollPos = window.pageYOffset;
 
@@ -101,5 +119,84 @@
 
     prevScrollPos = currentScrollPos;
   }
-  </script>
+
+  firmy = []
+  indeks = []
+  średnica = []
+    
+    function LoadData(){
+    fetch("https://my.api.mockaroo.com/users?key=72028210")
+    .then(response => response.json())
+    .then(data =>{
+
+      for(let j = 0; j < Math.min(10,data.length);j++){
+        element = data[j]
+        for(let i in element){
+          if(i==="Firma"){
+            firmy.push(element[i])
+          }
+          if(i==="Indeks Nośności"){
+            indeks.push(element[i])
+          }
+          if(i==="Średnica"){
+            średnica.push(element[i])
+          }
+        }
+      };
+    })
+    .catch(error => console.error("Error", error));
+
+}
+
+LoadData()
+    
+
+let data1 = {
+  labels: firmy,
+  datasets: [{
+    label: 'Indeks nośności',
+    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 1,
+    data: indeks
+  }]
+};
+
+let data2 = {
+  labels: firmy,
+  datasets: [{
+    label: 'Średnica',
+    backgroundColor: 'rgba(255, 69, 0, 0.2)',
+    borderColor: 'rgba(255, 69, 0,  1)',
+    borderWidth: 1,
+    data: średnica
+  }]
+};
+
+const options = {
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  }
+};
+    
+const ctx1 = document.getElementById('myBarChart1').getContext('2d');
+const ctx2 = document.getElementById('myBarChart2').getContext('2d');
+
+const myBarChart1 = new Chart(ctx1, {
+  type: 'bar',
+  data: data1,
+  options: options
+});
+
+const myBarChart2 = new Chart(ctx2, {
+  type: 'bar',
+  data: data2,
+  options: options
+});
+
+</script>
+
+
 </body>
