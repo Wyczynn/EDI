@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <title>OponExpress</title>
 </head>
 <body>
   
   <!-- Navigation Bar -->
-  <nav>
+  <nav class="navbar">
     <!-- Logo Image -->
     <img src="logo.png" alt="Logo" class="logo">
 
@@ -82,6 +83,7 @@
 <!---------------------------------------------->
 
  <script>
+  //navbar logic
   let prevScrollPos = window.pageYOffset;
 
   window.onscroll = function() {
@@ -96,6 +98,20 @@
     prevScrollPos = currentScrollPos;
   }
 
+  //------------------------------
+  //scroll animations
+  ScrollReveal({
+    reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 400 
+  });
+
+  ScrollReveal().reveal('.navbar', { delay: 200, duration: 1000, origin: "top"});
+
+  
+  //------------------------------
+  //charts
   firmy = []
   indeks = []
   średnica = []
