@@ -22,9 +22,10 @@
 
     <!-- sections -->
     <div class="sections">
-      <span class="section">Strona Główna</span>
-      <span class="section">Opony</span>
-      <span class="section">Nasz zespół</span>
+      <a class="section" href="#section0">Strona Główna</a>
+      <a class="section" href="#section1">Dlaczego My?</a>
+      <a class="section" href="#section2">Opony</a>
+      <a class="section" href="#section3">Nasz zespół</a>
     </div>
 
     <!-- "Add to Cart" button -->
@@ -33,7 +34,7 @@
     </button>
   </nav>
 
-  <div class="image-container">  <!-- Należy sprawdzić czy zdjęcie się dobrze dopasuje na różnych rozmiarach ekranów (czy tylko u mnie) -->
+  <div class="image-container" id="section0">  <!-- Należy sprawdzić czy zdjęcie się dobrze dopasuje na różnych rozmiarach ekranów (czy tylko u mnie) -->
     <img src="magazyn.jpg" alt="Obraz 1" style="width:100%;height:100%;"> <!-- ŚCIEŻKA BĘDZIE ZMIENIONA-->
     <h1 class="image-header">Sprzedaż opon</h1> <!-- Dopracować czcionkę i tekst -->
     <p class="image-description">Pomożemy ci wybrać opony oraz dostarczymy je pod twój dom w ciągu 48h</p> <!-- Dopracować czcionkę i zawartość tekstu-->
@@ -42,7 +43,7 @@
 
   <!--------------------------------------------->
 
-  <div class="info-container">
+  <div class="info-container" id="section1">
     <div class="info-sections">
       <h2 style="text-align: center;margin-top: 50px;">Dlaczego wybrać nas?</h2>
       <div class="info-section">
@@ -106,7 +107,7 @@
     </div>
   </div>
 <!--------------------------------------------->
-  <div class="table-container">
+  <div class="table-container" id="section2">
     <div class="table">
       <section class="table_header">
         <h1>Tyre List</h1>
@@ -244,56 +245,62 @@ const myBarChart2 = new Chart(ctx2, {
 </script>
 
 <!-- ----------------------------------------- -->
-
-<div class="autorzy-container">
-  <div class="autorzy-img-i-text-container">
-    <img src="bois.jpg" alt="Opis zdjęcia">
-  </div>
-  <div class="autorzy-text-container">
-    <h1>Zespół OponExpress</h1> 
-    <opis>Firma OponExpress narodziła się w 2023 roku z pasji do motoryzacji. Jesteśmy dynamicznym zespołem specjalizującym się w świadczeniu usług premium przy sprzedaży opon najwyższej jakości.
-      <br><br>
-      Stworzyliśmy miejsce, które nie tylko oferuje szeroki wybór opon, ale także dostarcza kompleksową wiedzę i profesjonalne doradztwo.
-      <br>
-      Naszą misją jest dostarczanie klientom opon najwyższej jakości, które gwarantują bezpieczeństwo, komfort i wydajność na drodze. <br>
-      <br>Zależy nam na tym, abyś jako kierowca mógł zaufać naszej selekcji, wiedzy eksperckiej i doskonałej obsłudze klienta.
-      <br>Charakteryzujemy się indywidualnym podejściem do klienta i oferujemy stałą opiekę od momentu zakupu, przez moment wysyłki aż do montażu państwa nowych opon!
-      <br><br>
-      Razem z nami możesz cieszyć się pewnymi zakupami. Dziękujemy, że jesteś częścią społeczności OponExpress!</opis>
+<div class="info-sections" id="section3">
+  <div class="info-section" style="grid-gap: 0px;">
+    <div class="info-imgwrapper-us left">
+      <img src="bois.jpg" alt="Opis zdjęcia">
+    </div>
+    <div class="info-contentwrapper">
+      <div class="info-content right">
+        <span class="info-textwrapper">
+          <span></span>
+        </span>
+        <h2>Zespół OponExpress</h2>
+        <p>Firma OponExpress narodziła się w 2023 roku z pasji do motoryzacji. Jesteśmy dynamicznym zespołem specjalizującym się w świadczeniu usług premium przy sprzedaży opon najwyższej jakości.
+          <br><br>
+          Stworzyliśmy miejsce, które nie tylko oferuje szeroki wybór opon, ale także dostarcza kompleksową wiedzę i profesjonalne doradztwo.
+          <br>
+          Naszą misją jest dostarczanie klientom opon najwyższej jakości, które gwarantują bezpieczeństwo, komfort i wydajność na drodze. <br>
+          <br>Zależy nam na tym, abyś jako kierowca mógł zaufać naszej selekcji, wiedzy eksperckiej i doskonałej obsłudze klienta.
+          <br>Charakteryzujemy się indywidualnym podejściem do klienta i oferujemy stałą opiekę od momentu zakupu, przez moment wysyłki aż do montażu państwa nowych opon!
+          <br><br>
+          Razem z nami możesz cieszyć się pewnymi zakupami. Dziękujemy, że jesteś częścią społeczności OponExpress!</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="stopka">
   
 
-<div class="social-media-box">
-  <p style="margin-right: 20px;">Znajdziesz nas na:</p>
-  <div class="social-media">
-    <img src="social1.png" alt="Opis obrazu 1">
-    <img src="social2.png" alt="Opis obrazu 1">
-  </div>
-</div>
-
-
-<div class="stopka-content">
-  <div class="column">
-      <pa style="color:blue">Ranking OponExpress</pa>
-      <p> 10 najlepszych opon do driftu</p>
-      <p> Ranking wulkanizatorów</p>
-  </div>
-  <div class="column">
-      <pa style="color:blue">Więcej</pa>
-      <p> Sponsorzy</p>
-      <p> Współpraca medialna</p>
-  </div>
-  <div class="column">
-      <pa style="color:blue">O nas</pa>
-      <p>Kontakt</p>
-      <p>Reklama</p>
-      <p>Regulamin serwisu</p>
+  <div class="social-media-box">
+    <p style="margin-right: 20px;">Znajdziesz nas na:</p>
+    <div class="social-media">
+      <img src="social1.png" alt="Opis obrazu 1">
+      <img src="social2.png" alt="Opis obrazu 1">
     </div>
-  
-</div>
+  </div>
+
+
+  <div class="stopka-content">
+    <div class="column">
+        <pa style="color:blue">Ranking OponExpress</pa>
+        <p> 10 najlepszych opon do driftu</p>
+        <p> Ranking wulkanizatorów</p>
+    </div>
+    <div class="column">
+        <pa style="color:blue">Więcej</pa>
+        <p> Sponsorzy</p>
+        <p> Współpraca medialna</p>
+    </div>
+    <div class="column">
+        <pa style="color:blue">O nas</pa>
+        <p>Kontakt</p>
+        <p>Reklama</p>
+        <p>Regulamin serwisu</p>
+      </div>
+    
+  </div>
 
 OponExpress &copy; 2024
 </div>
