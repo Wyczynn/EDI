@@ -2,11 +2,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="shortcut icon" href="ikona.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsivestyle.css">
+
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
+  
   <title>OponExpress</title>
 </head>
 <body>
@@ -37,25 +41,70 @@
 
 
   <!--------------------------------------------->
-  <h2 style="text-align: center;margin-top: 50px;">Dlaczego wybrać nas?</h2>
-  <div class="flex-cont">
-    <div class="image-cont">
-      <img src="bogaty_wybor.jpg" alt="Opis obrazu 1">
-      <p><b>Bogaty Wybór</b>: Oferujemy szeroki asortyment opon, dopasowany do różnych rodzajów pojazdów, warunków atmosferycznych i preferencji kierowców. Bez względu na to, czy potrzebujesz opon letnich, zimowych czy całorocznych, znajdziesz u nas idealne rozwiązanie.</p>
-    </div>
 
-    <div class="image-cont">
-      <img src="jakosc.jpg" alt="Opis obrazu 2">
-      <p><b>Jakość, Na Której Możesz Polegać</b>: Współpracujemy wyłącznie z renomowanymi producentami, co gwarantuje, że każda opona w naszym asortymencie spełnia najwyższe standardy jakościowe. Dbamy o to, aby nasze produkty były trwałe, skuteczne i bezpieczne.</p>
-    </div>
-
-    <div class="image-cont">
-      <img src="doradztwo.png" alt="Opis obrazu 3">
-      <p><b>Doradztwo Eksperckie</b>: Nasz zespół składa się z pasjonatów motoryzacji, gotowych służyć Ci profesjonalnym doradztwem. Bez względu na Twoje pytania czy potrzeby, jesteśmy tutaj, aby Ci pomóc wybrać najlepsze opony do Twojego pojazdu.</p>
+  <div class="info-container">
+    <div class="info-sections">
+      <h2 style="text-align: center;margin-top: 50px;">Dlaczego wybrać nas?</h2>
+      <div class="info-section">
+        <div class="info-imgwrapper left">
+          <img src="bogaty_wybor.jpg" alt="Opis obrazu 1">
+        </div>
+        <div class="info-contentwrapper">
+          <div class="info-content right">
+            <span class="info-textwrapper">
+              <span></span>Dlaczego my?
+            </span>
+            <h2>Bogaty Wybór</h2>
+            <p>
+              Oferujemy szeroki asortyment opon, dopasowany do różnych rodzajów pojazdów, 
+              warunków atmosferycznych i preferencji kierowców. 
+              Bez względu na to, czy potrzebujesz opon letnich, zimowych czy całorocznych, 
+              znajdziesz u nas idealne rozwiązanie.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="info-contentwrapper left">
+          <div class="info-content">
+            <span class="info-textwrapper">
+              <span></span>Dlaczego my?
+            </span>
+            <h2>Jakość, Na Której Możesz Polegać</h2>
+            <p>
+              Współpracujemy wyłącznie z renomowanymi producentami, co gwarantuje, 
+              że każda opona w naszym asortymencie spełnia najwyższe standardy jakościowe. 
+              Dbamy o to, aby nasze produkty były trwałe, skuteczne i bezpieczne.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="info-imgwrapper right">
+          <img src="jakosc.jpg" alt="Opis obrazu 2">
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="info-imgwrapper right">
+          <img src="doradztwo.png" alt="Opis obrazu 3">
+        </div>
+        <div class="info-contentwrapper left">
+          <div class="info-content" >
+            <span class="info-textwrapper">
+              <span></span>Dlaczego my?
+            </span>
+            <h2>Doradztwo Eksperckie</h2>
+            <p>
+              Nasz zespół składa się z pasjonatów motoryzacji, gotowych służyć Ci profesjonalnym doradztwem. 
+              Bez względu na Twoje pytania czy potrzeby, jesteśmy tutaj, 
+              aby Ci pomóc wybrać najlepsze opony do Twojego pojazdu.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
 <!--------------------------------------------->
   <div class="table-container">
     <div class="table">
@@ -103,11 +152,15 @@
   ScrollReveal({
     reset: true,
     distance: '60px',
-    duration: 2500,
-    delay: 400 
+    duration: 600,
+    delay: 200,
+    easing: "ease-out"
   });
 
-  ScrollReveal().reveal('.navbar', { delay: 200, duration: 1000, origin: "top"});
+  //ScrollReveal().reveal('.navbar', {origin: "top"})
+  ScrollReveal().reveal('.left', { origin: "left"});
+  ScrollReveal().reveal('.right', { origin: "right"});
+
 
   
   //------------------------------
