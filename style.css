@@ -118,6 +118,7 @@ nav {
   align-items: flex-start;
   margin: 20px auto; /* Centralizacja kontenera i dodatkowy margines */
   padding: 20px;
+  margin-top: 100px;
 }
 
 .autorzy-img-i-text-container{
@@ -149,7 +150,7 @@ nav {
   color: grey
 }
 
-opis{
+.opis{
   font-family: 'Courier New', Courier, monospace;
   
 }
@@ -344,11 +345,13 @@ tbody tr:hover{
   display: flex;
   flex-direction: column; /* Wyświetlanie się elementów pod sobą */
   align-items: center;
+  margin-top: 100px;
 }
 
 .social-media-box {
   display: flex;
   margin-left: 100px; 
+  margin-top:20px;
 }
 .social-media {
   margin-top: 10px;
