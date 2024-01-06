@@ -298,7 +298,7 @@ tbody tr:hover{
 }
 
 
-/* Stopka strony */
+/* ---------------------------- Stopka strony -------------------------------------- */
 .stopka {
   /* position: absolute; */
   bottom: 0;
@@ -310,7 +310,7 @@ tbody tr:hover{
   text-align: center;
   line-height: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Wyświetlanie się elementów pod sobą */
   align-items: center;
 }
 
@@ -332,3 +332,24 @@ tbody tr:hover{
   cursor: pointer;
   margin-right: 10px;
 }
+
+.stopka-content {
+  display: flex;
+  justify-content: space-around; /* ustawianie się elementów wraz z przerwami między nimi wzdłuż osi flexdirection: row*/
+  align-items: stretch; /* wypełnianie się w pionie */
+  flex-direction: row; /* dzięki temu kolumny ustawiają się obok siebie a nie pod sobą */   
+}
+
+.column {
+  max-width: 300px;
+  margin: 50px; /* Miejsce między kolumnami */
+  padding: 15px;
+  /* border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(253, 253, 253, 0.1); */
+}
+
+.column p {
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
