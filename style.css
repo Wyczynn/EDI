@@ -155,29 +155,94 @@ opis{
 }
 
 /* ------------------------------------------ Trzy zdjęcia --------------------------------------------------------------- */
-.flex-cont {
+
+.info-sections{
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+.info-section{
+  display: grid;
+  overflow-x: hidden;
+
+  width: 80%;
+  max-width: 1200px;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  padding: 5rem 0;
+}
+
+.info-imgwrapper{
+  overflow: hidden;
+}
+
+.info-imgwrapper img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.info-imgwrapper:hover img{
+  transform: scale(1.25);
+}
+
+.info-contentwrapper{
   display: flex;
-  justify-content: center; /* drugie zdjęcie stanowi środek, a sam box wyświetla się na środku*/
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding-left: 30px;
 }
 
-.image-cont {
-  text-align: center;
-  margin: 10px;
+span.info-textwrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 20px;
+  text-transform: capitalize;
   
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.image-cont img {
-  width: 200px; 
-  height: 200px; 
-  object-fit: cover; /* Utrzymuje proporcje obrazu i wypełnia kontener */
-  border: 1px solid #ddd; /* Dodatkowy styl obramowania */
-  border-radius: 8px; /* Zakrąglenie narożników */
-  margin: 20px;
+span.info-textwrapper span{
+  display: inline-block;
+  background: #3498db;
+  width: 70px;
+  height: 5px;
 }
 
-.image-cont p {
-  margin: 8px 0;
+.info-content h2{
+  font-size: 40px;
+  font-weight: 700;
+  color: #3498db;
+  padding-bottom: 20px;
 }
+
+.info-content p{
+  font-size: 16px;
+  line-height: 25px;
+  padding-bottom: 25px;
+}
+
+.info-content a{
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #3498db;
+  color: #fff;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+}
+/* ------------------------------------------ Tabela z mockaroo  ------------------------------------------ */
 
 td img{
     width: 36px;
@@ -262,39 +327,6 @@ tbody tr:hover{
 
 .table_content:hover::-webkit-scrollbar-thumb{
     visibility: visible;
-}
-
-
-
-@media (max-width: 1000px){
-    td:not(:first-of-type){
-        min-width: 8rem;
-    }
-    
-    .section{
-      font-size: 12px;
-    }
-
-    .sections {
-      margin-left: 20px;
-      margin-right: 80px;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    .cart-image {
-      height: 30px;
-    }
-
-    body.scrolling-down nav {
-      top: -60px;
-    }
-
-    nav{
-      max-height: 60px;
-    }
 }
 
 
