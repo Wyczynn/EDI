@@ -1,5 +1,6 @@
 function GetHeaders(){
-    return ["Picture", "ID", "First Name", "Last Name", "email", "Gender", "IP"];
+    return ["Look", "Firma", "Model", "Sezon", "Szerokość", "Profil", "Średnica", "Indeks Prędkości",
+            "Indeks Nośności", "Indeks Hałasu", "Cena"];
 }
 
 function LoadData(){
