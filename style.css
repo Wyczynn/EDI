@@ -362,8 +362,6 @@ tbody tr:hover{
   max-width: 300px;
   margin: 50px; /* Miejsce między kolumnami */
   padding: 15px;
-  /* border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(253, 253, 253, 0.1); */
 }
 
 .column p {
