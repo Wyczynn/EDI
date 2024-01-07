@@ -1,5 +1,5 @@
 function GetHeaders(){
-    return ["Look", "Firma", "Model", "Sezon", "Szerokość", "Profil", "Średnica", "Indeks Prędkości",
+    return ["Podgląd", "Firma", "Model", "Sezon", "Szerokość", "Profil", "Średnica", "Indeks Prędkości",
             "Indeks Nośności", "Indeks Hałasu", "Cena"];
 }
 

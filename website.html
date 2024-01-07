@@ -117,198 +117,196 @@
   </div>
 
 
-<!------------------"Charts"-------------------->
-<div style="display: flex; flex-direction:row; justify-content: space-around; margin-top:100px">
-  <div id="charts" style="display: flex; flex-direction: row;">
-    <div id="chart-canvas">
-      <canvas id="myBarChart1" width="500" height="300"></canvas>
+  <!------------------"Charts"-------------------->
+  <div style="display: flex; flex-direction:row; justify-content: space-around; margin-top:100px">
+    <div id="charts" style="display: flex; flex-direction: row;">
+      <div id="chart-canvas">
+        <canvas id="myBarChart1" class="left "width="500" height="300"></canvas>
+      </div>
+
+      <div class="kreska"></div>
+
+      <div id="chart-canvas" class="right">
+        <canvas id="myBarChart2" width="500" height="300"></canvas>
+      </div>
+
+    
     </div>
-
-    <div class="kreska"></div>
-
-    <div id="chart-canvas">
-      <canvas id="myBarChart2" width="500" height="300"></canvas>
-    </div>
-
-  
   </div>
-</div>
+
+  <!-- ----------------------------------------- -->
+  <div class="info-sections" id="section3">
+    <div class="info-section" style="grid-gap: 0px;">
+      <div class="info-imgwrapper-us left">
+        <img src="bois.jpg" alt="Opis zdjęcia">
+      </div>
+      <div class="info-contentwrapper">
+        <div class="info-content right">
+          <span class="info-textwrapper">
+            <span></span>
+          </span>
+          <h2>Zespół OponExpress</h2>
+          <p>Firma OponExpress narodziła się w 2023 roku z pasji do motoryzacji. Jesteśmy dynamicznym zespołem specjalizującym się w świadczeniu usług premium przy sprzedaży opon najwyższej jakości.
+            <br><br>
+            Stworzyliśmy miejsce, które nie tylko oferuje szeroki wybór opon, ale także dostarcza kompleksową wiedzę i profesjonalne doradztwo.
+            <br>
+            Naszą misją jest dostarczanie klientom opon najwyższej jakości, które gwarantują bezpieczeństwo, komfort i wydajność na drodze. <br>
+            <br>Zależy nam na tym, abyś jako kierowca mógł zaufać naszej selekcji, wiedzy eksperckiej i doskonałej obsłudze klienta.
+            <br>Charakteryzujemy się indywidualnym podejściem do klienta i oferujemy stałą opiekę od momentu zakupu, przez moment wysyłki aż do montażu państwa nowych opon!
+            <br><br>
+            Razem z nami możesz cieszyć się pewnymi zakupami. Dziękujemy, że jesteś częścią społeczności OponExpress!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stopka">
+    
+
+    <div class="social-media-box">
+      <p style="margin-right: 20px;">Znajdziesz nas na:</p>
+      <div class="social-media">
+        <img src="social1.png" alt="Opis obrazu 1">
+        <img src="social2.png" alt="Opis obrazu 1">
+      </div>
+    </div>
+
+
+    <div class="stopka-content">
+      <div class="column">
+          <pa style="color:blue">Ranking OponExpress</pa>
+          <p> 10 najlepszych opon do driftu</p>
+          <p> Ranking wulkanizatorów</p>
+      </div>
+      <div class="column">
+          <pa style="color:blue">Więcej</pa>
+          <p> Sponsorzy</p>
+          <p> Współpraca medialna</p>
+      </div>
+      <div class="column">
+          <pa style="color:blue">O nas</pa>
+          <p>Kontakt</p>
+          <p>Reklama</p>
+          <p>Regulamin serwisu</p>
+        </div>
+      
+    </div>
+
+  OponExpress &copy; 2024
+  </div>
 
 <!---------------------------------------------->
 
- <script>
-  //navbar logic
-  let prevScrollPos = window.pageYOffset;
+  <script>
+    //navbar logic
+    let prevScrollPos = window.pageYOffset;
 
-  window.onscroll = function() {
-    const currentScrollPos = window.pageYOffset;
+    window.onscroll = function() {
+      const currentScrollPos = window.pageYOffset;
 
-    if (prevScrollPos < currentScrollPos && currentScrollPos > 100) {
-      document.body.classList.add('scrolling-down');
-    } else {
-      document.body.classList.remove('scrolling-down');
+      if (prevScrollPos < currentScrollPos && currentScrollPos > 100) {
+        document.body.classList.add('scrolling-down');
+      } else {
+        document.body.classList.remove('scrolling-down');
+      }
+
+      prevScrollPos = currentScrollPos;
     }
 
-    prevScrollPos = currentScrollPos;
+    //------------------------------
+    //scroll animations
+    ScrollReveal({
+      reset: true,
+      distance: '60px',
+      duration: 600,
+      delay: 200,
+      easing: "ease-out"
+    });
+
+    //ScrollReveal().reveal('.navbar', {origin: "top"})
+    ScrollReveal().reveal('.left', { origin: "left"});
+    ScrollReveal().reveal('.right', { origin: "right"});
+
+
+    
+    //------------------------------
+    //charts
+    firmy = []
+    indeks = []
+    średnica = []
+      
+    function LoadData(){
+      fetch("https://my.api.mockaroo.com/users?key=72028210")
+      .then(response => response.json())
+      .then(data =>{
+
+        for(let j = 0; j < Math.min(10,data.length);j++){
+          element = data[j]
+          for(let i in element){
+            if(i==="Firma"){
+              firmy.push(element[i])
+            }
+            if(i==="Indeks Nośności"){
+              indeks.push(element[i])
+            }
+            if(i==="Średnica"){
+              średnica.push(element[i])
+            }
+          }
+        };
+      })
+      .catch(error => console.error("Error", error));
+
   }
 
-  //------------------------------
-  //scroll animations
-  ScrollReveal({
-    reset: true,
-    distance: '60px',
-    duration: 600,
-    delay: 200,
-    easing: "ease-out"
+  LoadData()
+      
+
+  let data1 = {
+    labels: firmy,
+    datasets: [{
+      label: 'Indeks nośności',
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1,
+      data: indeks
+    }]
+  };
+
+  let data2 = {
+    labels: firmy,
+    datasets: [{
+      label: 'Średnica',
+      backgroundColor: 'rgba(255, 69, 0, 0.2)',
+      borderColor: 'rgba(255, 69, 0,  1)',
+      borderWidth: 1,
+      data: średnica
+    }]
+  };
+
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  };
+      
+  const ctx1 = document.getElementById('myBarChart1').getContext('2d');
+  const ctx2 = document.getElementById('myBarChart2').getContext('2d');
+
+  const myBarChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: data1,
+    options: options
   });
 
-  //ScrollReveal().reveal('.navbar', {origin: "top"})
-  ScrollReveal().reveal('.left', { origin: "left"});
-  ScrollReveal().reveal('.right', { origin: "right"});
+  const myBarChart2 = new Chart(ctx2, {
+    type: 'line',
+    data: data2,
+    options: options
+  });
 
-
-  
-  //------------------------------
-  //charts
-  firmy = []
-  indeks = []
-  średnica = []
-    
-    function LoadData(){
-    fetch("https://my.api.mockaroo.com/users?key=72028210")
-    .then(response => response.json())
-    .then(data =>{
-
-      for(let j = 0; j < Math.min(10,data.length);j++){
-        element = data[j]
-        for(let i in element){
-          if(i==="Firma"){
-            firmy.push(element[i])
-          }
-          if(i==="Indeks Nośności"){
-            indeks.push(element[i])
-          }
-          if(i==="Średnica"){
-            średnica.push(element[i])
-          }
-        }
-      };
-    })
-    .catch(error => console.error("Error", error));
-
-}
-
-LoadData()
-    
-
-let data1 = {
-  labels: firmy,
-  datasets: [{
-    label: 'Indeks nośności',
-    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-    borderColor: 'rgba(75, 192, 192, 1)',
-    borderWidth: 1,
-    data: indeks
-  }]
-};
-
-let data2 = {
-  labels: firmy,
-  datasets: [{
-    label: 'Średnica',
-    backgroundColor: 'rgba(255, 69, 0, 0.2)',
-    borderColor: 'rgba(255, 69, 0,  1)',
-    borderWidth: 1,
-    data: średnica
-  }]
-};
-
-const options = {
-  scales: {
-    y: {
-      beginAtZero: true
-    }
-  }
-};
-    
-const ctx1 = document.getElementById('myBarChart1').getContext('2d');
-const ctx2 = document.getElementById('myBarChart2').getContext('2d');
-
-const myBarChart1 = new Chart(ctx1, {
-  type: 'bar',
-  data: data1,
-  options: options
-});
-
-const myBarChart2 = new Chart(ctx2, {
-  type: 'bar',
-  data: data2,
-  options: options
-});
-
-</script>
-
-<!-- ----------------------------------------- -->
-<div class="info-sections" id="section3">
-  <div class="info-section" style="grid-gap: 0px;">
-    <div class="info-imgwrapper-us left">
-      <img src="bois.jpg" alt="Opis zdjęcia">
-    </div>
-    <div class="info-contentwrapper">
-      <div class="info-content right">
-        <span class="info-textwrapper">
-          <span></span>
-        </span>
-        <h2>Zespół OponExpress</h2>
-        <p>Firma OponExpress narodziła się w 2023 roku z pasji do motoryzacji. Jesteśmy dynamicznym zespołem specjalizującym się w świadczeniu usług premium przy sprzedaży opon najwyższej jakości.
-          <br><br>
-          Stworzyliśmy miejsce, które nie tylko oferuje szeroki wybór opon, ale także dostarcza kompleksową wiedzę i profesjonalne doradztwo.
-          <br>
-          Naszą misją jest dostarczanie klientom opon najwyższej jakości, które gwarantują bezpieczeństwo, komfort i wydajność na drodze. <br>
-          <br>Zależy nam na tym, abyś jako kierowca mógł zaufać naszej selekcji, wiedzy eksperckiej i doskonałej obsłudze klienta.
-          <br>Charakteryzujemy się indywidualnym podejściem do klienta i oferujemy stałą opiekę od momentu zakupu, przez moment wysyłki aż do montażu państwa nowych opon!
-          <br><br>
-          Razem z nami możesz cieszyć się pewnymi zakupami. Dziękujemy, że jesteś częścią społeczności OponExpress!</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="stopka">
-  
-
-  <div class="social-media-box">
-    <p style="margin-right: 20px;">Znajdziesz nas na:</p>
-    <div class="social-media">
-      <img src="social1.png" alt="Opis obrazu 1">
-      <img src="social2.png" alt="Opis obrazu 1">
-    </div>
-  </div>
-
-
-  <div class="stopka-content">
-    <div class="column">
-        <pa style="color:blue">Ranking OponExpress</pa>
-        <p> 10 najlepszych opon do driftu</p>
-        <p> Ranking wulkanizatorów</p>
-    </div>
-    <div class="column">
-        <pa style="color:blue">Więcej</pa>
-        <p> Sponsorzy</p>
-        <p> Współpraca medialna</p>
-    </div>
-    <div class="column">
-        <pa style="color:blue">O nas</pa>
-        <p>Kontakt</p>
-        <p>Reklama</p>
-        <p>Regulamin serwisu</p>
-      </div>
-    
-  </div>
-
-OponExpress &copy; 2024
-</div>
-
-
+  </script>
 
 </body>
