@@ -371,3 +371,12 @@ tbody tr:hover{
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
+
+.kreska { /* pionowa kreska między wykresami */
+  display: inline-block;
+  background: #3498db;
+  width: 5px;
+  height: 300px;
+  margin-left: 20px;  /* odstęp od wykresu */
+  margin-right: 20px;
+}
